@@ -78,10 +78,19 @@ public class Main extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         l2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        text_equipos = new javax.swing.JTextArea();
         listarequipos = new javax.swing.JButton();
         e3 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        cb_elimnar2 = new javax.swing.JComboBox<>();
+        eliminar2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        cb_mod2 = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        paisN = new javax.swing.JTextField();
+        nombreN1 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         Estadios = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -410,12 +419,17 @@ public class Main extends javax.swing.JFrame {
 
         l2.setBackground(new java.awt.Color(204, 255, 255));
 
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        text_equipos.setBackground(new java.awt.Color(255, 255, 255));
+        text_equipos.setColumns(20);
+        text_equipos.setRows(5);
+        jScrollPane1.setViewportView(text_equipos);
 
         listarequipos.setText("Listar");
+        listarequipos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listarequiposMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout l2Layout = new javax.swing.GroupLayout(l2);
         l2.setLayout(l2Layout);
@@ -445,30 +459,95 @@ public class Main extends javax.swing.JFrame {
 
         e3.setBackground(new java.awt.Color(204, 255, 255));
 
+        jLabel14.setText("Elija el equipo a eliminar");
+
+        eliminar2.setText("Eliminar");
+        eliminar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eliminar2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout e3Layout = new javax.swing.GroupLayout(e3);
         e3.setLayout(e3Layout);
         e3Layout.setHorizontalGroup(
             e3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addGroup(e3Layout.createSequentialGroup()
+                .addGroup(e3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(e3Layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(cb_elimnar2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(e3Layout.createSequentialGroup()
+                        .addGap(266, 266, 266)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(e3Layout.createSequentialGroup()
+                        .addGap(276, 276, 276)
+                        .addComponent(eliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
         e3Layout.setVerticalGroup(
             e3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGroup(e3Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jLabel14)
+                .addGap(30, 30, 30)
+                .addComponent(cb_elimnar2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(eliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         Eliminar.addTab("Eliminar", e3);
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel15.setText("Pais");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel16.setText("Nombre");
+
+        jButton4.setText("Modificar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(paisN, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_mod2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombreN1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(302, 302, 302)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(318, 318, 318)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(258, 258, 258)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(cb_mod2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addComponent(paisN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nombreN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         Eliminar.addTab("Modificar", jPanel2);
@@ -582,6 +661,8 @@ public class Main extends javax.swing.JFrame {
             cb.addElement(equipo);
         }
         cb_equipos.setModel(cb);
+        cb_mod2.setModel(cb);
+        cb_elimnar2.setModel(cb);
         JOptionPane.showMessageDialog(this, "Agregado exitosamente!");
         nombre_equipo.setText("");
         pais.setText("");
@@ -616,6 +697,30 @@ public class Main extends javax.swing.JFrame {
         jugadores.get(cb_mod1.getSelectedIndex()).setNacionalidad(nacionN.getText());
         jugadores.get(cb_mod1.getSelectedIndex()).setPie(pieN.getText());
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void listarequiposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listarequiposMouseClicked
+        // TODO add your handling code here:
+        String x = "";
+        for (Equipo jugadore : equipos) {
+            x += jugadore.toString();
+        }
+        text_equipos.setText(x);
+    }//GEN-LAST:event_listarequiposMouseClicked
+
+    private void eliminar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminar2MouseClicked
+        // TODO add your handling code here:
+        DefaultComboBoxModel cb = (DefaultComboBoxModel) cb_elimnar2.getModel();
+        cb.removeAllElements();
+        for (Equipo equipo : equipos) {
+            if (equipo.equals(cb_elimnar2.getSelectedItem())) {
+                cb.removeElement(equipo);
+                equipos.remove(equipo);
+            }
+        }
+        cb_elimnar2.setModel(cb);
+        cb_mod2.setModel(cb);
+        cb_equipos.setModel(cb);
+    }//GEN-LAST:event_eliminar2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -698,21 +803,28 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_Agregar1;
     private javax.swing.JButton bt_eliminar1;
     private javax.swing.JComboBox<String> cb_Jugadores;
+    private javax.swing.JComboBox<String> cb_elimnar2;
     private javax.swing.JComboBox<String> cb_equipos;
     private javax.swing.JComboBox<String> cb_mod1;
+    private javax.swing.JComboBox<String> cb_mod2;
     private javax.swing.JComboBox<String> cb_tipo;
     private javax.swing.JPanel e1;
     private javax.swing.JPanel e3;
     private javax.swing.JTextField edad;
     private javax.swing.JTextField edadN;
+    private javax.swing.JButton eliminar2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -726,7 +838,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
     private javax.swing.JTextArea listar1;
@@ -734,9 +845,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField nacionN;
     private javax.swing.JTextField nacionalidad;
     private javax.swing.JTextField name;
+    private javax.swing.JTextField nombreN1;
     private javax.swing.JTextField nombre_equipo;
     private javax.swing.JTextField pais;
+    private javax.swing.JTextField paisN;
     private javax.swing.JTextField pie;
     private javax.swing.JTextField pieN;
+    private javax.swing.JTextArea text_equipos;
     // End of variables declaration//GEN-END:variables
 }
