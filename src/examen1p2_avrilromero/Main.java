@@ -4,6 +4,8 @@
  */
 package examen1p2_avrilromero;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author rodge
@@ -15,6 +17,7 @@ public class Main extends javax.swing.JFrame {
      */
     int xMouse;
     int yMouse;
+
     public Main() {
         initComponents();
     }
@@ -36,6 +39,7 @@ public class Main extends javax.swing.JFrame {
         modJugador = new javax.swing.JPanel();
         modEstadio = new javax.swing.JPanel();
         listar = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         eliminar = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -126,15 +130,17 @@ public class Main extends javax.swing.JFrame {
 
         listar.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         javax.swing.GroupLayout listarLayout = new javax.swing.GroupLayout(listar);
         listar.setLayout(listarLayout);
         listarLayout.setHorizontalGroup(
             listarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         listarLayout.setVerticalGroup(
             listarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 709, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Tabmain.addTab("Listar", listar);
@@ -174,15 +180,34 @@ public class Main extends javax.swing.JFrame {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
-        
-    }    
-    
+
+    }
+
     private void headerMousePressed(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         xMouse = evt.getX();
         yMouse = evt.getY();
-        
-    }    
+
+    }
+    ArrayList<Jugador> jugadores = new ArrayList();
+    ArrayList<Equipo> equipos = new ArrayList();
+
+    public int ratingequipos(Equipo e1, Equipo e2) {
+        int diferencia;
+        int probabilidad=1;
+        if (e1.getRating() > e2.getRating()) {
+            diferencia = e1.getRating() - e2.getRating();
+        } else {
+            diferencia = e2.getRating() - e1.getRating();
+        }
+        if (diferencia<=10) {
+            probabilidad=diferencia*4;
+        }else{
+            probabilidad=diferencia*5;
+        }
+        return probabilidad;
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -221,6 +246,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel agregarEstadio;
     private javax.swing.JPanel agregarJugador;
     private javax.swing.JPanel eliminar;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel listar;
     private javax.swing.JPanel modEquipo;
     private javax.swing.JPanel modEstadio;
