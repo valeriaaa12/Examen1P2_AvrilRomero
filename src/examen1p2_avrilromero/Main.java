@@ -77,7 +77,11 @@ public class Main extends javax.swing.JFrame {
         pais = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         l2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        listarequipos = new javax.swing.JButton();
         e3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         Estadios = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -365,18 +369,6 @@ public class Main extends javax.swing.JFrame {
 
         jLabel9.setText("Pais");
 
-        nombre_equipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombre_equipoActionPerformed(evt);
-            }
-        });
-
-        pais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                paisActionPerformed(evt);
-            }
-        });
-
         jButton1.setText("Agregar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -418,18 +410,40 @@ public class Main extends javax.swing.JFrame {
 
         l2.setBackground(new java.awt.Color(204, 255, 255));
 
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        listarequipos.setText("Listar");
+
         javax.swing.GroupLayout l2Layout = new javax.swing.GroupLayout(l2);
         l2.setLayout(l2Layout);
         l2Layout.setHorizontalGroup(
             l2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addGroup(l2Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(listarequipos, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103))
         );
         l2Layout.setVerticalGroup(
             l2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGroup(l2Layout.createSequentialGroup()
+                .addGroup(l2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(l2Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(l2Layout.createSequentialGroup()
+                        .addGap(175, 175, 175)
+                        .addComponent(listarequipos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         Eliminar.addTab("Listar", l2);
+
+        e3.setBackground(new java.awt.Color(204, 255, 255));
 
         javax.swing.GroupLayout e3Layout = new javax.swing.GroupLayout(e3);
         e3.setLayout(e3Layout);
@@ -442,7 +456,22 @@ public class Main extends javax.swing.JFrame {
             .addGap(0, 454, Short.MAX_VALUE)
         );
 
-        Eliminar.addTab("tab3", e3);
+        Eliminar.addTab("Eliminar", e3);
+
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 697, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 454, Short.MAX_VALUE)
+        );
+
+        Eliminar.addTab("Modificar", jPanel2);
 
         javax.swing.GroupLayout EquiposLayout = new javax.swing.GroupLayout(Equipos);
         Equipos.setLayout(EquiposLayout);
@@ -540,14 +569,6 @@ public class Main extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_bt_Agregar1MouseClicked
-
-    private void nombre_equipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_equipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombre_equipoActionPerformed
-
-    private void paisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_paisActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
@@ -701,11 +722,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
     private javax.swing.JTextArea listar1;
+    private javax.swing.JButton listarequipos;
     private javax.swing.JTextField nacionN;
     private javax.swing.JTextField nacionalidad;
     private javax.swing.JTextField name;
