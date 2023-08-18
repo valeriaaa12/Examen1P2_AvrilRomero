@@ -19,7 +19,7 @@ public class Main extends javax.swing.JFrame {
      */
     int xMouse;
     int yMouse;
-    
+
     public Main() {
         initComponents();
     }
@@ -91,11 +91,17 @@ public class Main extends javax.swing.JFrame {
         paisN = new javax.swing.JTextField();
         nombreN1 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
         Estadios = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Tabmain.setBackground(new java.awt.Color(0, 102, 102));
+        Tabmain.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                TabmainStateChanged(evt);
+            }
+        });
 
         Jugadores.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -509,18 +515,14 @@ public class Main extends javax.swing.JFrame {
 
         jButton4.setText("Modificar");
 
+        jLabel17.setText("elija el equipo a modificar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(243, 243, 243)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(paisN, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_mod2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nombreN1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(302, 302, 302)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -529,15 +531,25 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(258, 258, 258)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(paisN, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cb_mod2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nombreN1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(278, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addGap(58, 58, 58)
+                .addComponent(jLabel17)
+                .addGap(18, 18, 18)
                 .addComponent(cb_mod2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel15)
                 .addGap(18, 18, 18)
                 .addComponent(paisN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -600,7 +612,7 @@ public class Main extends javax.swing.JFrame {
         if (equipos.isEmpty()) {
             JOptionPane.showInputDialog(this, "No hay equipos");
         } else {
-            
+
             String nombre = name.getText();
             int age = Integer.parseInt(edad.getText());
             String n1 = nacionalidad.getText();
@@ -722,6 +734,29 @@ public class Main extends javax.swing.JFrame {
         cb_equipos.setModel(cb);
     }//GEN-LAST:event_eliminar2MouseClicked
 
+    private void TabmainStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabmainStateChanged
+        DefaultComboBoxModel cb = (DefaultComboBoxModel) cb_Jugadores.getModel();
+        DefaultComboBoxModel cb2 = (DefaultComboBoxModel) cb_equipos.getModel();
+        DefaultComboBoxModel cb3 = (DefaultComboBoxModel) cb_mod1.getModel();
+        DefaultComboBoxModel cb4 = (DefaultComboBoxModel) cb_elimnar2.getModel();
+        DefaultComboBoxModel cb5 = (DefaultComboBoxModel) cb_mod2.getModel();
+        cb.removeAllElements();
+        cb2.removeAllElements();
+        cb3.removeAllElements();
+        cb4.removeAllElements();
+        cb5.removeAllElements();
+        for (Jugador j : jugadores) {
+            cb.addElement(j);
+            cb3.addElement(j);
+        }
+        for (Equipo e : equipos) {
+            cb2.addElement(e);
+            cb4.addElement(e);
+            cb5.addElement(e);
+        }
+
+    }//GEN-LAST:event_TabmainStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -730,18 +765,18 @@ public class Main extends javax.swing.JFrame {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
-        
+
     }
-    
+
     private void headerMousePressed(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         xMouse = evt.getX();
         yMouse = evt.getY();
-        
+
     }
     ArrayList<Jugador> jugadores = new ArrayList();
     ArrayList<Equipo> equipos = new ArrayList();
-    
+
     public void ratingequipos(Equipo e1, Equipo e2) {
         int diferencia;
         int probabilidad = 1;
@@ -757,9 +792,9 @@ public class Main extends javax.swing.JFrame {
             probabilidad = diferencia * 5;
             JOptionPane.showMessageDialog(this, "La probabilidad de ganar del equipo mayor: " + probabilidad);
         }
-        
+
     }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -825,6 +860,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
