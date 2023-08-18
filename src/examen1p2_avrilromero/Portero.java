@@ -11,134 +11,134 @@ import java.util.Random;
  * @author rodge
  */
 public class Portero extends Jugador {
-    
+
     public Portero() {
     }
-    
+
     public Portero(String nombre, int edad, String nacionalidad, String pie, Equipo equipo) {
         super(nombre, edad, nacionalidad, pie, equipo);
     }
-    
+
     public String getNombre() {
         return nombre;
     }
-    
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public int getEdad() {
         return edad;
     }
-    
+
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
+
     public String getNacionalidad() {
         return nacionalidad;
     }
-    
+
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-    
+
     public String getPie() {
         return pie;
     }
-    
+
     public void setPie(String pie) {
         this.pie = pie;
     }
-    
+
     public int getRating() {
         return rating;
     }
-    
+
     public void setRating(int rating) {
         this.rating = rating;
     }
-    
+
     public Equipo getEquipo() {
         return equipo;
     }
-    
+
     public void setEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
-    
+
     public int getAgarre() {
         return Agarre;
     }
-    
+
     public void setAgarre(int Agarre) {
         this.Agarre = Agarre;
     }
-    
+
     public int getLanzamiento() {
         return Lanzamiento;
     }
-    
+
     public void setLanzamiento(int Lanzamiento) {
         this.Lanzamiento = Lanzamiento;
     }
-    
+
     public int getFisico() {
         return Fisico;
     }
-    
+
     public void setFisico(int Fisico) {
         this.Fisico = Fisico;
     }
-    
+
     public int getRitmo() {
         return Ritmo;
     }
-    
+
     public void setRitmo(int Ritmo) {
         this.Ritmo = Ritmo;
     }
-    
+
     public int getEntrada() {
         return Entrada;
     }
-    
+
     public void setEntrada(int Entrada) {
         this.Entrada = Entrada;
     }
-    
+
     public int getVision() {
         return Vision;
     }
-    
+
     public void setVision(int Vision) {
         this.Vision = Vision;
     }
-    
+
     public int getPassing() {
         return Passing;
     }
-    
+
     public void setPassing(int Passing) {
         this.Passing = Passing;
     }
-    
+
     public int getRegate() {
         return Regate;
     }
-    
+
     public void setRegate(int Regate) {
         this.Regate = Regate;
     }
-    
+
     public int getDisparo() {
         return Disparo;
     }
-    
+
     public void setDisparo(int Disparo) {
         this.Disparo = Disparo;
     }
-    
+
     @Override
     public Jugador ratings(Jugador x) {
         Random random = new Random();
@@ -215,14 +215,14 @@ public class Portero extends Jugador {
         x.setRitmo(mult7);
         x.setVision(mult8);
         x.setFisico(mult9);
-        int rf = rating1 / 9;
-        x.setRating(rf);
+        int rf = rating1/9;
+        x.setRating(rating);
         return x;
     }
-    
+
     @Override
     public String toString() {
         return super.toString();
     }
-    
+
 }

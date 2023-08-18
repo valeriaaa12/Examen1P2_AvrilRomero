@@ -49,7 +49,7 @@ public class Main extends javax.swing.JFrame {
         cb_equipos = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         cb_tipo = new javax.swing.JComboBox<>();
-        l2 = new javax.swing.JPanel();
+        l1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new javax.swing.JTable();
         e1 = new javax.swing.JPanel();
@@ -57,6 +57,15 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         bt_eliminar1 = new javax.swing.JButton();
         Equipos = new javax.swing.JPanel();
+        Eliminar = new javax.swing.JTabbedPane();
+        a2 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        nombre_equipo = new javax.swing.JTextField();
+        pais = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        l2 = new javax.swing.JPanel();
+        e3 = new javax.swing.JPanel();
         Estadios = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -169,7 +178,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar", a1);
 
-        l2.setBackground(new java.awt.Color(204, 255, 255));
+        l1.setBackground(new java.awt.Color(204, 255, 255));
 
         table1.setBackground(new java.awt.Color(255, 255, 255));
         table1.setModel(new javax.swing.table.DefaultTableModel(
@@ -190,24 +199,24 @@ public class Main extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(table1);
 
-        javax.swing.GroupLayout l2Layout = new javax.swing.GroupLayout(l2);
-        l2.setLayout(l2Layout);
-        l2Layout.setHorizontalGroup(
-            l2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(l2Layout.createSequentialGroup()
+        javax.swing.GroupLayout l1Layout = new javax.swing.GroupLayout(l1);
+        l1.setLayout(l1Layout);
+        l1Layout.setHorizontalGroup(
+            l1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(l1Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(130, Short.MAX_VALUE))
         );
-        l2Layout.setVerticalGroup(
-            l2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(l2Layout.createSequentialGroup()
+        l1Layout.setVerticalGroup(
+            l1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(l1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Listar", l2);
+        jTabbedPane1.addTab("Listar", l1);
 
         e1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -264,15 +273,102 @@ public class Main extends javax.swing.JFrame {
 
         Equipos.setBackground(new java.awt.Color(204, 255, 255));
 
+        Eliminar.setBackground(new java.awt.Color(204, 255, 255));
+
+        a2.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel8.setText("Nombre");
+
+        jLabel9.setText("Pais");
+
+        nombre_equipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nombre_equipoActionPerformed(evt);
+            }
+        });
+
+        pais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                paisActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Agregar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout a2Layout = new javax.swing.GroupLayout(a2);
+        a2.setLayout(a2Layout);
+        a2Layout.setHorizontalGroup(
+            a2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(a2Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(a2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nombre_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pais, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(435, Short.MAX_VALUE))
+        );
+        a2Layout.setVerticalGroup(
+            a2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(a2Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jLabel8)
+                .addGap(26, 26, 26)
+                .addComponent(nombre_equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(pais, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jButton1)
+                .addContainerGap(161, Short.MAX_VALUE))
+        );
+
+        Eliminar.addTab("Agregar", a2);
+
+        l2.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout l2Layout = new javax.swing.GroupLayout(l2);
+        l2.setLayout(l2Layout);
+        l2Layout.setHorizontalGroup(
+            l2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 697, Short.MAX_VALUE)
+        );
+        l2Layout.setVerticalGroup(
+            l2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 454, Short.MAX_VALUE)
+        );
+
+        Eliminar.addTab("Listar", l2);
+
+        javax.swing.GroupLayout e3Layout = new javax.swing.GroupLayout(e3);
+        e3.setLayout(e3Layout);
+        e3Layout.setHorizontalGroup(
+            e3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 697, Short.MAX_VALUE)
+        );
+        e3Layout.setVerticalGroup(
+            e3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 454, Short.MAX_VALUE)
+        );
+
+        Eliminar.addTab("tab3", e3);
+
         javax.swing.GroupLayout EquiposLayout = new javax.swing.GroupLayout(Equipos);
         Equipos.setLayout(EquiposLayout);
         EquiposLayout.setHorizontalGroup(
             EquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addComponent(Eliminar)
         );
         EquiposLayout.setVerticalGroup(
             EquiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 485, Short.MAX_VALUE)
+            .addComponent(Eliminar)
         );
 
         Tabmain.addTab("Equipos", Equipos);
@@ -312,30 +408,56 @@ public class Main extends javax.swing.JFrame {
 
     private void bt_Agregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_Agregar1MouseClicked
         // TODO add your handling code here:
-        String nombre = name.getText();
-        int age = Integer.parseInt(edad.getText());
-        String n1 = nacionalidad.getText();
-        String dominante = pie.getText();
-        Equipo z = (Equipo) cb_equipos.getSelectedItem();
-        String tipo = (String) cb_tipo.getSelectedItem();
-        if (tipo == "Portero") {
-            Portero j1 = new Portero(nombre, age, n1, dominante, z);
-            jugadores.add(j1);
+        if (equipos.isEmpty()) {
+            JOptionPane.showInputDialog(this, "No hay equipos");
+            {
+                String nombre = name.getText();
+                int age = Integer.parseInt(edad.getText());
+                String n1 = nacionalidad.getText();
+                String dominante = pie.getText();
+                Equipo z = (Equipo) cb_equipos.getSelectedItem();
+                String tipo = (String) cb_tipo.getSelectedItem();
+                if (tipo == "Portero") {
+                    Portero j1 = new Portero(nombre, age, n1, dominante, z);
+                    z.getJugadores().add(j1);
+                    jugadores.add(j1);
+                }
+                if (tipo == "Delantero") {
+                    Delantero j2 = new Delantero(nombre, age, n1, dominante, z);
+                    z.getJugadores().add(j2);
+                    jugadores.add(j2);
+                }
+                if (tipo == "Mediocampista") {
+                    Mediocampista j3 = new Mediocampista(nombre, age, n1, dominante, z);
+                    z.getJugadores().add(j3);
+                    jugadores.add(j3);
+                }
+                if (tipo == "Defensa") {
+                    Defensa j4 = new Defensa(nombre, age, n1, dominante, z);
+                    z.getJugadores().add(j4);
+                    jugadores.add(j4);
+                }
+                JOptionPane.showInputDialog(this, "Jugador agregado !");
+            }
         }
-        if (tipo == "Delantero") {
-            Delantero j2 = new Delantero(nombre, age, n1, dominante, z);
-            jugadores.add(j2);
-        }
-        if (tipo == "Mediocampista") {
-            Mediocampista j3 = new Mediocampista(nombre, age, n1, dominante, z);
-            jugadores.add(j3);
-        }
-        if (tipo == "Defensa") {
-            Defensa j4 = new Defensa(nombre, age, n1, dominante, z);
-            jugadores.add(j4);
-        }
-        JOptionPane.showInputDialog(this, "Jugador agregado !");
+
     }//GEN-LAST:event_bt_Agregar1MouseClicked
+
+    private void nombre_equipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_equipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombre_equipoActionPerformed
+
+    private void paisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paisActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        String nombre = nombre_equipo.getText();
+        String pais1 = pais.getText();
+        Equipo e1 = new Equipo(nombre, pais1);
+        equipos.add(e1);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -406,18 +528,22 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane Eliminar;
     private javax.swing.JPanel Equipos;
     private javax.swing.JPanel Estadios;
     private javax.swing.JPanel Jugadores;
     private javax.swing.JTabbedPane Tabmain;
     private javax.swing.JPanel a1;
+    private javax.swing.JPanel a2;
     private javax.swing.JButton bt_Agregar1;
     private javax.swing.JButton bt_eliminar1;
     private javax.swing.JComboBox<String> cb_Jugadores;
     private javax.swing.JComboBox<String> cb_equipos;
     private javax.swing.JComboBox<String> cb_tipo;
     private javax.swing.JPanel e1;
+    private javax.swing.JPanel e3;
     private javax.swing.JTextField edad;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -425,11 +551,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
     private javax.swing.JTextField nacionalidad;
     private javax.swing.JTextField name;
+    private javax.swing.JTextField nombre_equipo;
+    private javax.swing.JTextField pais;
     private javax.swing.JTextField pie;
     private javax.swing.JTable table1;
     // End of variables declaration//GEN-END:variables
