@@ -57,7 +57,7 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return  "nombre: " + nombre + "\n\t" + " pais: " + pais ;
+        return  "\n\t" + " nombre: " + nombre + "\n\t" + " pais: " + pais ;
     }
 
 }

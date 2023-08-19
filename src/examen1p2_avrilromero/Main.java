@@ -1251,20 +1251,21 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Estadio> estadios = new ArrayList();
 
     public void ratingequipos(Equipo e1, Equipo e2) {
-        int diferencia;
-        int probabilidad = 1;
+        
         if (e1.getRating() > e2.getRating()) {
-            diferencia = e1.getRating() - e2.getRating();
-        } else {
-            diferencia = e2.getRating() - e1.getRating();
-        }
-        if (diferencia <= 10) {
-            probabilidad = diferencia * 4;
+           int diferencia = e1.getRating() - e2.getRating();
+            if (diferencia <= 10) {
+            int probabilidad = diferencia * 4;
             JOptionPane.showMessageDialog(this, "La probabilidad de ganar del equipo menor: " + probabilidad);
         } else {
-            probabilidad = diferencia * 5;
+            int probabilidad = diferencia * 5;
             JOptionPane.showMessageDialog(this, "La probabilidad de ganar del equipo mayor: " + probabilidad);
         }
+        } else {
+           int  diferencia = e2.getRating() - e1.getRating();
+           
+        }
+        
     }
 
     public void resultado(Equipo e1, Equipo e2) {

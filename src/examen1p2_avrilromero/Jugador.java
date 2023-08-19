@@ -160,7 +160,7 @@ public abstract class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador: " + "\n\t" + "nombre: " + nombre + "\n\t" + "edad: " + edad + "\n\t" + "nacionalidad: " + nacionalidad + "\n\t" + "pie:" + pie +"\n\t"+ "equipo: " + equipo ;
+        return  "\n\t" +"Jugador: " + "\n\t" + "nombre: " + nombre + "\n\t" + "edad: " + edad + "\n\t" + "nacionalidad: " + nacionalidad + "\n\t" + "pie:" + pie +"\n\t"+ "equipo: " + equipo ;
     }
 
 }
