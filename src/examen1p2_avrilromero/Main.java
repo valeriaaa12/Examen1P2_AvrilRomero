@@ -514,6 +514,11 @@ public class Main extends javax.swing.JFrame {
         jLabel16.setText("Nombre");
 
         jButton4.setText("Modificar");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jLabel17.setText("elija el equipo a modificar");
 
@@ -756,6 +761,12 @@ public class Main extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_TabmainStateChanged
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        equipos.get(cb_mod2.getSelectedIndex()).setNombre(nombreN1.getText());
+        equipos.get(cb_mod2.getSelectedIndex()).setPais(paisN.getText());
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
