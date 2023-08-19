@@ -984,7 +984,6 @@ public class Main extends javax.swing.JFrame {
                 cb1.addElement(equipo);
             }
             cb_Jugadores.setModel(cb1);
-            cb_equipoestadio.setModel(cb1);
             JOptionPane.showMessageDialog(this, "Agregado exitosamente!");
             name.setText("");
             edad.setText("");
@@ -1001,13 +1000,31 @@ public class Main extends javax.swing.JFrame {
         Equipo e1 = new Equipo(nombre, pais1);
         equipos.add(e1);
         DefaultComboBoxModel cb = (DefaultComboBoxModel) cb_equipos.getModel();
+        DefaultComboBoxModel cb2 = (DefaultComboBoxModel) cb_equipoestadio.getModel();
+        DefaultComboBoxModel cb3 = (DefaultComboBoxModel) cb_mod2.getModel();
+        DefaultComboBoxModel cb4 = (DefaultComboBoxModel) cb_elimnar2.getModel();
+        DefaultComboBoxModel cb5 = (DefaultComboBoxModel) cb_equipo1.getModel();
+        DefaultComboBoxModel cb6 = (DefaultComboBoxModel) cb_equipo2.getModel();
         cb.removeAllElements();
+        cb2.removeAllElements();
+        cb3.removeAllElements();
+        cb4.removeAllElements();
+        cb5.removeAllElements();
+        cb6.removeAllElements();
         for (Equipo equipo : equipos) {
             cb.addElement(equipo);
+            cb2.addElement(equipo);
+            cb3.addElement(equipo);
+            cb4.addElement(equipo);
+            cb5.addElement(equipo);
+            cb6.addElement(equipo);
         }
         cb_equipos.setModel(cb);
-        cb_mod2.setModel(cb);
-        cb_elimnar2.setModel(cb);
+        cb_equipoestadio.setModel(cb2);
+        cb_mod2.setModel(cb3);
+        cb_elimnar2.setModel(cb4);
+        cb_equipo1.setModel(cb5);
+        cb_equipo2.setModel(cb6);
         JOptionPane.showMessageDialog(this, "Agregado exitosamente!");
         nombre_equipo.setText("");
         pais.setText("");
