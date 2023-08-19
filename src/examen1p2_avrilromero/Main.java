@@ -19,7 +19,7 @@ public class Main extends javax.swing.JFrame {
      */
     int xMouse;
     int yMouse;
-
+    
     public Main() {
         initComponents();
     }
@@ -123,6 +123,7 @@ public class Main extends javax.swing.JFrame {
         capacidad = new javax.swing.JTextField();
         cb_equipoestadio = new javax.swing.JComboBox<>();
         bt_estadio = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -852,6 +853,21 @@ public class Main extends javax.swing.JFrame {
 
         Tabmain.addTab("Estadios", Estadios);
 
+        jPanel7.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 697, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 485, Short.MAX_VALUE)
+        );
+
+        Tabmain.addTab("Simulador", jPanel7);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -870,9 +886,9 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         if (equipos.isEmpty()) {
-            JOptionPane.showInputDialog(this, "No hay equipos");
+            JOptionPane.showMessageDialog(this, "No hay equipos");
         } else {
-
+            
             String nombre = name.getText();
             int age = Integer.parseInt(edad.getText());
             String n1 = nacionalidad.getText();
@@ -907,7 +923,7 @@ public class Main extends javax.swing.JFrame {
             cb_Jugadores.setModel(cb);
             cb_mod1.setModel(cb);
             DefaultComboBoxModel cb1 = (DefaultComboBoxModel) cb_Jugadores.getModel();
-            cb.removeAllElements();
+            cb1.removeAllElements();
             for (Jugador equipo : jugadores) {
                 cb1.addElement(equipo);
             }
@@ -943,11 +959,17 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        String x = "";
-        for (Jugador jugadore : jugadores) {
-            x += jugadore.toString();
+        if (listar1.getText().equalsIgnoreCase("")) {
+            String x = "";
+            for (Jugador jugadore : jugadores) {
+                x += jugadore.toString();
+                x += "\n\t";
+            }
+            listar1.setText(x);            
+        } else {
+            listar1.setText("");
         }
-        listar1.setText(x);
+        
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void bt_eliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_eliminar1MouseClicked
@@ -973,11 +995,17 @@ public class Main extends javax.swing.JFrame {
 
     private void listarequiposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listarequiposMouseClicked
         // TODO add your handling code here:
-        String x = "";
-        for (Equipo jugadore : equipos) {
-            x += jugadore.toString();
+        if (text_equipos.getText().equalsIgnoreCase("")) {
+            String x = "";
+            for (Equipo jugadore : equipos) {
+                x += jugadore.toString();
+                x += "\n\t";
+            }
+            text_equipos.setText(x);
+        } else {
+            text_equipos.setText("");
         }
-        text_equipos.setText(x);
+
     }//GEN-LAST:event_listarequiposMouseClicked
 
     private void eliminar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminar2MouseClicked
@@ -1012,6 +1040,7 @@ public class Main extends javax.swing.JFrame {
         cb5.removeAllElements();
         cb6.removeAllElements();
         cb7.removeAllElements();
+        cb8.removeAllElements();
         for (Jugador j : jugadores) {
             cb.addElement(j);
             cb3.addElement(j);
@@ -1054,10 +1083,10 @@ public class Main extends javax.swing.JFrame {
         nombreestadio.setText("");
         ciudad.setText("");
         capacidad.setText("");
-         DefaultComboBoxModel cb = (DefaultComboBoxModel) cb_Jugadores.getModel();
+        DefaultComboBoxModel cb = (DefaultComboBoxModel) cb_Jugadores.getModel();
         cb.removeAllElements();
         for (Estadio equipo : estadios) {
-           cb.addElement(equipo);
+            cb.addElement(equipo);
         }
         cb_eliminarestadio.setModel(cb);
         cb_mod3.setModel(cb);
@@ -1066,11 +1095,17 @@ public class Main extends javax.swing.JFrame {
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
         //listar
-        String x = "";
-        for (Estadio jugadore : estadios) {
-            x += jugadore.toString();
+        if (lista3.getText().equalsIgnoreCase("")) {
+            String x = "";
+            for (Estadio jugadore : estadios) {
+                x += jugadore.toString();
+                x += "\n\t";
+            }
+            lista3.setText(x);
+        } else {
+            lista3.setText("");
         }
-        lista3.setText(x);
+
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void bt_eliminar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_eliminar3MouseClicked
@@ -1103,19 +1138,19 @@ public class Main extends javax.swing.JFrame {
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
-
+        
     }
-
+    
     private void headerMousePressed(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         xMouse = evt.getX();
         yMouse = evt.getY();
-
+        
     }
     ArrayList<Jugador> jugadores = new ArrayList();
     ArrayList<Equipo> equipos = new ArrayList();
     ArrayList<Estadio> estadios = new ArrayList();
-
+    
     public void ratingequipos(Equipo e1, Equipo e2) {
         int diferencia;
         int probabilidad = 1;
@@ -1131,9 +1166,9 @@ public class Main extends javax.swing.JFrame {
             probabilidad = diferencia * 5;
             JOptionPane.showMessageDialog(this, "La probabilidad de ganar del equipo mayor: " + probabilidad);
         }
-
+        
     }
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1235,6 +1270,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
