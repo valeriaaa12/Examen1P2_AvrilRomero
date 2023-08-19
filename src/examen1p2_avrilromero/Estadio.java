@@ -13,14 +13,16 @@ public class Estadio {
     private String nombre;
     private String Ciudad;
     private Equipo equipo;
+    private int cap;
 
     public Estadio() {
     }
 
-    public Estadio(String nombre, String Ciudad, Equipo equipo) {
+    public Estadio(String nombre, String Ciudad, int cap, Equipo equipo) {
         this.nombre = nombre;
         this.Ciudad = Ciudad;
         this.equipo = equipo;
+        this.cap = cap;
     }
 
     public String getNombre() {
@@ -47,9 +49,17 @@ public class Estadio {
         this.equipo = equipo;
     }
 
+    public int getCap() {
+        return cap;
+    }
+
+    public void setCap(int cap) {
+        this.cap = cap;
+    }
+
     @Override
     public String toString() {
-        return "Estadio:" + "\n" + "nombre: " + nombre + "\n" + "Ciudad:" + Ciudad + "\n" + "equipo: " + equipo;
+        return "nombre: " + nombre + "\n/t" + "Ciudad:" + Ciudad + "\n\t" + "equipo: " + equipo;
     }
 
 }

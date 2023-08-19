@@ -33,6 +33,7 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         Tabmain = new javax.swing.JTabbedPane();
         Jugadores = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -93,6 +94,28 @@ public class Main extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         Estadios = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        lista3 = new javax.swing.JTextArea();
+        jButton5 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        cb_eliminarestadio = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        bt_eliminar3 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        nombreestadio = new javax.swing.JTextField();
+        ciudad = new javax.swing.JTextField();
+        capacidad = new javax.swing.JTextField();
+        cb_equipoestadio = new javax.swing.JComboBox<>();
+        bt_estadio = new javax.swing.JButton();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -584,15 +607,176 @@ public class Main extends javax.swing.JFrame {
 
         Estadios.setBackground(new java.awt.Color(204, 255, 255));
 
+        jTabbedPane2.setBackground(new java.awt.Color(204, 255, 255));
+
+        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+
+        lista3.setColumns(20);
+        lista3.setRows(5);
+        jScrollPane3.setViewportView(lista3);
+
+        jButton5.setText("Listar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(132, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Listar", jPanel4);
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel22.setText("Eliminar un estadio");
+
+        bt_eliminar3.setText("eliminar");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(cb_eliminarestadio, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(bt_eliminar3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(244, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addComponent(cb_eliminarestadio, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(bt_eliminar3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(166, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Eliminar", jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 697, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 454, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Modificar", jPanel6);
+
+        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel18.setText("Agregue el nombre");
+
+        jLabel19.setText("Agregue la ciudad");
+
+        jLabel20.setText("Agregue una capacidad");
+
+        jLabel21.setText("Agregue un Equipo");
+
+        bt_estadio.setText("agregar");
+        bt_estadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_estadioMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nombreestadio, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bt_estadio, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(capacidad, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                .addComponent(ciudad)
+                                .addComponent(cb_equipoestadio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(327, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreestadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(capacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_equipoestadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(bt_estadio)
+                .addGap(55, 55, 55))
+        );
+
+        jTabbedPane2.addTab("Agregar", jPanel3);
+
         javax.swing.GroupLayout EstadiosLayout = new javax.swing.GroupLayout(Estadios);
         Estadios.setLayout(EstadiosLayout);
         EstadiosLayout.setHorizontalGroup(
             EstadiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2)
         );
         EstadiosLayout.setVerticalGroup(
             EstadiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 485, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2)
         );
 
         Tabmain.addTab("Estadios", Estadios);
@@ -657,6 +841,7 @@ public class Main extends javax.swing.JFrame {
                 cb1.addElement(equipo);
             }
             cb_Jugadores.setModel(cb1);
+            cb_equipoestadio.setModel(cb1);
             JOptionPane.showMessageDialog(this, "Agregado exitosamente!");
             name.setText("");
             edad.setText("");
@@ -737,6 +922,7 @@ public class Main extends javax.swing.JFrame {
         cb_elimnar2.setModel(cb);
         cb_mod2.setModel(cb);
         cb_equipos.setModel(cb);
+        cb_equipoestadio.setModel(cb);
     }//GEN-LAST:event_eliminar2MouseClicked
 
     private void TabmainStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabmainStateChanged
@@ -745,11 +931,15 @@ public class Main extends javax.swing.JFrame {
         DefaultComboBoxModel cb3 = (DefaultComboBoxModel) cb_mod1.getModel();
         DefaultComboBoxModel cb4 = (DefaultComboBoxModel) cb_elimnar2.getModel();
         DefaultComboBoxModel cb5 = (DefaultComboBoxModel) cb_mod2.getModel();
+        DefaultComboBoxModel cb6 = (DefaultComboBoxModel) cb_equipoestadio.getModel();
+        DefaultComboBoxModel cb7 = (DefaultComboBoxModel) cb_eliminarestadio.getModel();
         cb.removeAllElements();
         cb2.removeAllElements();
         cb3.removeAllElements();
         cb4.removeAllElements();
         cb5.removeAllElements();
+        cb6.removeAllElements();
+        cb7.removeAllElements();
         for (Jugador j : jugadores) {
             cb.addElement(j);
             cb3.addElement(j);
@@ -758,8 +948,18 @@ public class Main extends javax.swing.JFrame {
             cb2.addElement(e);
             cb4.addElement(e);
             cb5.addElement(e);
+            cb6.addElement(e);
         }
-
+        for (Estadio estadio : estadios) {
+            cb7.addElement(estadio);
+        }
+        cb_Jugadores.setModel(cb);
+        cb_equipos.setModel(cb2);
+        cb_mod1.setModel(cb3);
+        cb_elimnar2.setModel(cb4);
+        cb_mod2.setModel(cb5);
+        cb_equipoestadio.setModel(cb6);
+        cb_eliminarestadio.setModel(cb7);
     }//GEN-LAST:event_TabmainStateChanged
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -767,6 +967,30 @@ public class Main extends javax.swing.JFrame {
         equipos.get(cb_mod2.getSelectedIndex()).setNombre(nombreN1.getText());
         equipos.get(cb_mod2.getSelectedIndex()).setPais(paisN.getText());
     }//GEN-LAST:event_jButton4MouseClicked
+
+    private void bt_estadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_estadioMouseClicked
+        // TODO add your handling code here:
+        String nombre = nombreestadio.getText();
+        String ciudad1 = ciudad.getText();
+        int cap = Integer.parseInt(capacidad.getText());
+        Equipo s = (Equipo) cb_equipoestadio.getSelectedItem();
+        Estadio es = new Estadio(nombre, ciudad1, cap, s);
+        estadios.add(es);
+        JOptionPane.showMessageDialog(this, "Agregado exitosamente!");
+        nombreestadio.setText("");
+        ciudad.setText("");
+        capacidad.setText("");
+    }//GEN-LAST:event_bt_estadioMouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        //listar
+        String x = "";
+        for (Estadio jugadore : estadios) {
+            x += jugadore.toString();
+        }
+        lista3.setText(x);
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -787,6 +1011,7 @@ public class Main extends javax.swing.JFrame {
     }
     ArrayList<Jugador> jugadores = new ArrayList();
     ArrayList<Equipo> equipos = new ArrayList();
+    ArrayList<Estadio> estadios = new ArrayList();
 
     public void ratingequipos(Equipo e1, Equipo e2) {
         int diferencia;
@@ -848,12 +1073,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel a2;
     private javax.swing.JButton bt_Agregar1;
     private javax.swing.JButton bt_eliminar1;
+    private javax.swing.JButton bt_eliminar3;
+    private javax.swing.JButton bt_estadio;
+    private javax.swing.JTextField capacidad;
     private javax.swing.JComboBox<String> cb_Jugadores;
+    private javax.swing.JComboBox<String> cb_eliminarestadio;
     private javax.swing.JComboBox<String> cb_elimnar2;
+    private javax.swing.JComboBox<String> cb_equipoestadio;
     private javax.swing.JComboBox<String> cb_equipos;
     private javax.swing.JComboBox<String> cb_mod1;
     private javax.swing.JComboBox<String> cb_mod2;
     private javax.swing.JComboBox<String> cb_tipo;
+    private javax.swing.JTextField ciudad;
     private javax.swing.JPanel e1;
     private javax.swing.JPanel e3;
     private javax.swing.JTextField edad;
@@ -863,6 +1094,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -872,7 +1105,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -882,11 +1120,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JPanel l1;
     private javax.swing.JPanel l2;
+    private javax.swing.JTextArea lista3;
     private javax.swing.JTextArea listar1;
     private javax.swing.JButton listarequipos;
     private javax.swing.JTextField nacionN;
@@ -894,6 +1139,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField name;
     private javax.swing.JTextField nombreN1;
     private javax.swing.JTextField nombre_equipo;
+    private javax.swing.JTextField nombreestadio;
     private javax.swing.JTextField pais;
     private javax.swing.JTextField paisN;
     private javax.swing.JTextField pie;
