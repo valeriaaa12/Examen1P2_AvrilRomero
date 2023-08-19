@@ -104,6 +104,15 @@ public class Main extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         bt_eliminar3 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        cb_mod3 = new javax.swing.JComboBox<>();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        ciudadN = new javax.swing.JTextField();
+        capN = new javax.swing.JTextField();
+        nombreN2 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -653,6 +662,11 @@ public class Main extends javax.swing.JFrame {
         jLabel22.setText("Eliminar un estadio");
 
         bt_eliminar3.setText("eliminar");
+        bt_eliminar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_eliminar3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -687,15 +701,72 @@ public class Main extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(204, 255, 255));
 
+        jLabel23.setText("Elija el nombre del estadio a modificar");
+
+        jLabel24.setText("Nueva ciudad");
+
+        jLabel25.setText("Nueva capacidad");
+
+        jLabel26.setText("Nueva nombre");
+
+        jButton6.setText("modificar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(299, 299, 299))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(245, 245, 245)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cb_mod3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ciudadN)
+                            .addComponent(capN)
+                            .addComponent(nombreN2)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(297, 297, 297)
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(296, 296, 296)
+                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel23)
+                .addGap(29, 29, 29)
+                .addComponent(cb_mod3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ciudadN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(capN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nombreN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Modificar", jPanel6);
@@ -933,6 +1004,7 @@ public class Main extends javax.swing.JFrame {
         DefaultComboBoxModel cb5 = (DefaultComboBoxModel) cb_mod2.getModel();
         DefaultComboBoxModel cb6 = (DefaultComboBoxModel) cb_equipoestadio.getModel();
         DefaultComboBoxModel cb7 = (DefaultComboBoxModel) cb_eliminarestadio.getModel();
+        DefaultComboBoxModel cb8 = (DefaultComboBoxModel) cb_mod3.getModel();
         cb.removeAllElements();
         cb2.removeAllElements();
         cb3.removeAllElements();
@@ -952,6 +1024,7 @@ public class Main extends javax.swing.JFrame {
         }
         for (Estadio estadio : estadios) {
             cb7.addElement(estadio);
+            cb8.addElement(estadio);
         }
         cb_Jugadores.setModel(cb);
         cb_equipos.setModel(cb2);
@@ -960,6 +1033,7 @@ public class Main extends javax.swing.JFrame {
         cb_mod2.setModel(cb5);
         cb_equipoestadio.setModel(cb6);
         cb_eliminarestadio.setModel(cb7);
+        cb_mod3.setModel(cb8);
     }//GEN-LAST:event_TabmainStateChanged
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -980,6 +1054,13 @@ public class Main extends javax.swing.JFrame {
         nombreestadio.setText("");
         ciudad.setText("");
         capacidad.setText("");
+         DefaultComboBoxModel cb = (DefaultComboBoxModel) cb_Jugadores.getModel();
+        cb.removeAllElements();
+        for (Estadio equipo : estadios) {
+           cb.addElement(equipo);
+        }
+        cb_eliminarestadio.setModel(cb);
+        cb_mod3.setModel(cb);
     }//GEN-LAST:event_bt_estadioMouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
@@ -991,6 +1072,28 @@ public class Main extends javax.swing.JFrame {
         }
         lista3.setText(x);
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void bt_eliminar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_eliminar3MouseClicked
+        // TODO add your handling code here:
+        DefaultComboBoxModel cb = (DefaultComboBoxModel) cb_eliminarestadio.getModel();
+        cb.removeAllElements();
+        for (Estadio equipo : estadios) {
+            if (equipo.equals(cb_eliminarestadio.getSelectedItem())) {
+                cb.removeElement(equipo);
+                estadios.remove(equipo);
+            }
+        }
+        cb_eliminarestadio.setModel(cb);
+        cb_mod3.setModel(cb);
+    }//GEN-LAST:event_bt_eliminar3MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        // equipos.get(cb_mod2.getSelectedIndex()).setNombre(nombreN1.getText());
+        estadios.get(cb_mod3.getSelectedIndex()).setCiudad(ciudadN.getText());
+        estadios.get(cb_mod3.getSelectedIndex()).setCap(Integer.parseInt(capN.getText()));
+        estadios.get(cb_mod3.getSelectedIndex()).setNombre(nombreN2.getText());
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1075,6 +1178,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton bt_eliminar1;
     private javax.swing.JButton bt_eliminar3;
     private javax.swing.JButton bt_estadio;
+    private javax.swing.JTextField capN;
     private javax.swing.JTextField capacidad;
     private javax.swing.JComboBox<String> cb_Jugadores;
     private javax.swing.JComboBox<String> cb_eliminarestadio;
@@ -1083,8 +1187,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_equipos;
     private javax.swing.JComboBox<String> cb_mod1;
     private javax.swing.JComboBox<String> cb_mod2;
+    private javax.swing.JComboBox<String> cb_mod3;
     private javax.swing.JComboBox<String> cb_tipo;
     private javax.swing.JTextField ciudad;
+    private javax.swing.JTextField ciudadN;
     private javax.swing.JPanel e1;
     private javax.swing.JPanel e3;
     private javax.swing.JTextField edad;
@@ -1095,6 +1201,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1111,6 +1218,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1138,6 +1249,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField nacionalidad;
     private javax.swing.JTextField name;
     private javax.swing.JTextField nombreN1;
+    private javax.swing.JTextField nombreN2;
     private javax.swing.JTextField nombre_equipo;
     private javax.swing.JTextField nombreestadio;
     private javax.swing.JTextField pais;
