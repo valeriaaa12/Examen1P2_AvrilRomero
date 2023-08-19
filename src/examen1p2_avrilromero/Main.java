@@ -1040,6 +1040,7 @@ public class Main extends javax.swing.JFrame {
         }
         cb_Jugadores.setModel(cb);
         cb_mod1.setModel(cb);
+
     }//GEN-LAST:event_bt_eliminar1MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
@@ -1078,6 +1079,8 @@ public class Main extends javax.swing.JFrame {
         cb_mod2.setModel(cb);
         cb_equipos.setModel(cb);
         cb_equipoestadio.setModel(cb);
+        cb_equipo1.setModel(cb);
+        cb_equipo2.setModel(cb);
     }//GEN-LAST:event_eliminar2MouseClicked
 
     private void TabmainStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabmainStateChanged
@@ -1089,6 +1092,8 @@ public class Main extends javax.swing.JFrame {
         DefaultComboBoxModel cb6 = (DefaultComboBoxModel) cb_equipoestadio.getModel();
         DefaultComboBoxModel cb7 = (DefaultComboBoxModel) cb_eliminarestadio.getModel();
         DefaultComboBoxModel cb8 = (DefaultComboBoxModel) cb_mod3.getModel();
+        DefaultComboBoxModel cb9 = (DefaultComboBoxModel) cb_equipo1.getModel();
+        DefaultComboBoxModel cb10 = (DefaultComboBoxModel) cb_equipo2.getModel();
         cb.removeAllElements();
         cb2.removeAllElements();
         cb3.removeAllElements();
@@ -1097,15 +1102,20 @@ public class Main extends javax.swing.JFrame {
         cb6.removeAllElements();
         cb7.removeAllElements();
         cb8.removeAllElements();
+        cb9.removeAllElements();
+        cb10.removeAllElements();
         for (Jugador j : jugadores) {
             cb.addElement(j);
             cb3.addElement(j);
+
         }
         for (Equipo e : equipos) {
             cb2.addElement(e);
             cb4.addElement(e);
             cb5.addElement(e);
             cb6.addElement(e);
+            cb9.addElement(e);
+            cb10.addElement(e);
         }
         for (Estadio estadio : estadios) {
             cb7.addElement(estadio);
@@ -1119,6 +1129,8 @@ public class Main extends javax.swing.JFrame {
         cb_equipoestadio.setModel(cb6);
         cb_eliminarestadio.setModel(cb7);
         cb_mod3.setModel(cb8);
+        cb_equipo1.setModel(cb9);
+        cb_equipo2.setModel(cb10);
     }//GEN-LAST:event_TabmainStateChanged
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
